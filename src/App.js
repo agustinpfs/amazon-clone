@@ -7,12 +7,17 @@ import Login from './Login';
 import React, { useEffect } from 'react';
 import { auth } from "./firebase";
 import { useStateValue } from './StateProvider';
+import Payment from './Payment';
 
 
 
 function App() {
   const [{}, dispatch] = useStateValue();
   // who is logged:
+
+    useEffect(() => {
+      document.title = "Amazon e-commerce"
+  }, []);
 
   useEffect(() => {
     // will only run once when the app component loads...
@@ -51,6 +56,11 @@ function App() {
           <Route path='/checkout'>
             <Header />
             <Checkout />
+          </Route>
+         
+          <Route path='/payment'>
+            <Header />
+            <Payment />
           </Route>
           
           <Route path='/'>
