@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './Payment.css';
 import { useStateValue } from './StateProvider';
@@ -55,15 +55,15 @@ function Payment() {
             // paymentIntent = payment confirmation
 
             db
-              .collection('users')
-              .doc(user?.uid)
-              .collection('orders')
-              .doc(paymentIntent.id)
-              .set({
-                  basket: basket,
-                  amount: paymentIntent.amount,
-                  created: paymentIntent.created
-              })
+                .collection('users')
+                .doc(user?.uid)
+                .collection('orders')
+                .doc(paymentIntent.id)
+                .set({
+                    basket: basket,
+                    amount: paymentIntent.amount,
+                    created: paymentIntent.created
+                })
 
             setSucceeded(true);
             setError(null)
@@ -127,7 +127,7 @@ function Payment() {
                     </div>
                     <div className="payment__details">
                         <form onSubmit={handleSubmit}>
-                            <CardElement onChange={handleChange}/>
+                            <CardElement onChange={handleChange} />
 
                             <div className='payment__priceContainer'>
                                 <CurrencyFormat
@@ -145,12 +145,12 @@ function Payment() {
                                 </button>
                             </div>
 
-                                {/* Errors */}
+                            {/* Errors */}
                             {error && <div>{error}</div>}
-                        </form> 
-                            
+                        </form>
+
                     </div>
-                
+
                 </div>
             </div>
         </div>

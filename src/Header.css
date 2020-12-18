@@ -48,11 +48,11 @@
     color: white;
 }
 
-.header__optionlineOne {
+.header__optionLineOne {
     font-size: 10px;
 }
 
-.header__optionlineTwo {
+.header__optionLineTwo {
     font-size: 13px;
     font-weight: 800;
 }

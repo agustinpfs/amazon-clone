@@ -29,7 +29,8 @@ app.get("/", (request, response) => response.status(200).send("hello world"));
 // app.get("/qazi", (request, response) => response.status(200).send("hello world qazi"));
 
 app.post("/payments/create", async (request, response) => {
-  const total = request.query.total;
+  // const total = request.query.total;
+  const total = 33333;
 
   console.log("Payment Request Recieved BOOM!!! for this amount >>> ", total);
 
@@ -38,8 +39,8 @@ app.post("/payments/create", async (request, response) => {
     currency: "usd",
   });
 
-   // OK - Created
-   response.status(201).send({
+  // OK - Created
+  response.status(201).send({
     clientSecret: paymentIntent.client_secret,
   });
 });
